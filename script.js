@@ -1,4 +1,4 @@
-let Panel = function(title, channelId, key, width, height) {
+let Pannel = function(title, channelId, key, width, height) {
     this.title = title;
     this.channelId = channelId;
     this.key = key;
@@ -10,8 +10,8 @@ let Monitor = function () {
 
     let panel;
     let todaySummary = [
-        new Panel('title', '2814877', '1024018', '450', '260'),
-        new Panel('title', '2814877', '1024019', '450', '260'),
+        new Pannel('title', '2814877', '1024018', '450', '260'),
+        new Pannel('title', '2814877', '1024019', '450', '260'),
     ];
 
     this.load = function () {
