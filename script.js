@@ -1,37 +1,50 @@
-let Pannel = function(title, channelId, key, width, height) {
-    this.title = title;
-    this.channelId = channelId;
-    this.key = key;
-    this.width = width;
-    this.height = height;
+class Panel {
+    constructor(selector, channelUI) {
+        this.selector = selector;
+        this.channelUI = channelUI;
+        //document.querySelector(selector).appendChild(channelUI);
+    }
+}
+class ChannelUI {
+    constructor(channelId, key, width, height) {
+        this.channelId = channelId;
+        this.key = key;
+        this.width = width;
+        this.height = height;
+    }
 };
 
-let Monitor = function () {
+class Monitor {
 
-    let panel;
-    let todaySummary = [
-        new Pannel('title', '2814877', '1024018', '450', '260'),
-        new Pannel('title', '2814877', '1024019', '450', '260'),
-    ];
-
-    this.load = function () {
-        panel = document.querySelector('#panel');
-
-        todaySummary.forEach((channel) => {
-            let iFrame = this.getIframe(channel);
-            panel.appendChild(iFrame);
+    constructor() {
+        this.#todaySummaryPanels().forEach((panel) => {            
+            let iFrame = this.#getIframe(panel.channelUI);
+            document.querySelector(panel.selector).appendChild(iFrame);
         })
-    };
+    }
 
-    this.getUrl = function (channel) {
+    #todaySummaryPanels = function() {
+        return [
+            new Panel(
+                "#panel-status-ok", 
+                new ChannelUI('2814877', '1024018', '450', '260')
+            ),
+            new Panel(
+                "#panel-status-alarm", 
+                new ChannelUI('2814877', '1024019', '450', '260')
+            )
+        ];
+    }
+
+    #getUrl = function (channel) {
         let channelId = channel.channelId;
         let key = channel.key;
         let timestamp = new Date().getTime();
         return `https://thingspeak.com/channels/${channelId}/widgets/${key}?ts=${timestamp}`;
     }
 
-    this.getIframe = function (channel) {
-        let url = this.getUrl(channel);
+    #getIframe = function (channel) {
+        let url = this.#getUrl(channel);
 
         let iFrameElement = document.createElement('iframe');
         iFrameElement.src = url;
@@ -40,8 +53,7 @@ let Monitor = function () {
         iFrameElement.style = "border: 1px solid #cccccc;";
 
         return iFrameElement;
-    };
+    }
 };
 
 let monitor = new Monitor();
-monitor.load();
