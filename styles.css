@@ -1,0 +1,22 @@
+iframe {
+    border: 1px solid #cccccc;
+    width: 420px;
+    height: 260px;    
+}
+
+.mid iframe {
+    width: 220px;
+    height: 200px;
+}
+
+.small iframe {
+    width: 150px;
+    height: 200px;
+}
+
+h1 {
+    font-size: 14px;
+}
+h2 {
+    font-size: 12px;
+}

@@ -2,15 +2,12 @@ class Panel {
     constructor(selector, channelUI) {
         this.selector = selector;
         this.channelUI = channelUI;
-        //document.querySelector(selector).appendChild(channelUI);
     }
 }
 class ChannelUI {
     constructor(channelId, key, width, height) {
         this.channelId = channelId;
         this.key = key;
-        this.width = width;
-        this.height = height;
     }
 };
 
@@ -27,11 +24,11 @@ class Monitor {
         return [
             new Panel(
                 "#panel-status-ok", 
-                new ChannelUI('2814877', '1024018', '450', '260')
+                new ChannelUI('2814877', '1024018')
             ),
             new Panel(
                 "#panel-status-alarm", 
-                new ChannelUI('2814877', '1024019', '450', '260')
+                new ChannelUI('2814877', '1024019')
             )
         ];
     }
@@ -48,9 +45,6 @@ class Monitor {
 
         let iFrameElement = document.createElement('iframe');
         iFrameElement.src = url;
-        iFrameElement.width = channel.width;
-        iFrameElement.height = channel.height;
-        iFrameElement.style = "border: 1px solid #cccccc;";
 
         return iFrameElement;
     }
