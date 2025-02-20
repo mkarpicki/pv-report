@@ -1,53 +1,33 @@
-class Panel {
-    constructor(selector, channelUI) {
-        this.selector = selector;
-        this.channelUI = channelUI;
-    }
-}
-class ChannelUI {
-    constructor(channelId, key, width, height) {
-        this.channelId = channelId;
-        this.key = key;
-    }
-};
+let mapping = [
+    { selector: "#panel-status-ok", url: "https://thingspeak.com/channels/2814877/widgets/1024018?" },
+    { selector: "#panel-status-alarm", url: "https://thingspeak.com/channels/2814877/widgets/1024019?" },
+    { selector: "#panel-status-fault", url: "https://thingspeak.com/channels/2814877/widgets/1024020?" },
+    { selector: "#panel-status-stand-by", url: "https://thingspeak.com/channels/2814877/widgets/1024021?" },
+    { selector: "#panel-status-self-check", url: "https://thingspeak.com/channels/2814877/widgets/1024022?" }
+];
 
 class Monitor {
 
+    getUrl (url) {  
+        let timestamp = new Date().getTime();
+        return url + `ts=${timestamp}`;
+    }
+
+    getIframe (url) {
+        let src = this.getUrl(url);
+        let iFrameElement = document.createElement('iframe');
+        iFrameElement.src = src;
+
+        return iFrameElement;
+    }
+
     constructor() {
-        this.#todaySummaryPanels().forEach((panel) => {            
-            let iFrame = this.#getIframe(panel.channelUI);
+        mapping.forEach((panel) => {            
+            let iFrame = this.getIframe(panel.url);
             document.querySelector(panel.selector).appendChild(iFrame);
         })
     }
 
-    #todaySummaryPanels = function() {
-        return [
-            new Panel(
-                "#panel-status-ok", 
-                new ChannelUI('2814877', '1024018')
-            ),
-            new Panel(
-                "#panel-status-alarm", 
-                new ChannelUI('2814877', '1024019')
-            )
-        ];
-    }
-
-    #getUrl = function (channel) {
-        let channelId = channel.channelId;
-        let key = channel.key;
-        let timestamp = new Date().getTime();
-        return `https://thingspeak.com/channels/${channelId}/widgets/${key}?ts=${timestamp}`;
-    }
-
-    #getIframe = function (channel) {
-        let url = this.#getUrl(channel);
-
-        let iFrameElement = document.createElement('iframe');
-        iFrameElement.src = url;
-
-        return iFrameElement;
-    }
 };
 
 let monitor = new Monitor();
