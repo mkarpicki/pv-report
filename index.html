@@ -10,12 +10,64 @@
     </head>   
     <body>
         <h1>PV Monitor</h1>
-        <section id="panel-status-ok" class="mid"></section>
-        <section id="panel-status-alarm" class="mid"></section>
-        <section id="panel-status-fault" class="mid"></section>
-        <section id="panel-status-stand-by" class="mid"></section>
-        <section id="panel-status-self-check" class="mid"></section>
-        <section id="x" class="mid"></section>   
+        <section id="online">
+            <h2>Teraz</h2>
+            <section id="status">
+                <section id="now-status-ok" class="mid"></section>
+                <section id="now-status-alarm" class="mid"></section>
+                <section id="now-status-fault" class="mid"></section>
+                <section id="now-status-stand-by" class="mid"></section>
+                <section id="now-status-self-check" class="mid"></section>
+            </section>
+            <section id="battery">
+                <h3>Bateria</h3>
+                <section id="now-battery-capacity-clock">
+                    <label>Poziom</label>
+                </section>
+                <section id="now-battery-temperature-value" class="mid">
+                    <label>Temperatura</label>
+                </section>
+                <section id="now-battery-power-value" class="mid">
+                    <label>Użycie</label>
+                </section>
+            </section>
+            <section id="now-overall">
+                <h3>Instalacja</h3>
+                <section id="now-instalation-production-power-clock">
+                    <label>Produkcja</label>
+                </section>
+                <section id="now-instalation-grid-power-clock">
+                    <label>Sieć</label>
+                </section>
+                <section id="now-instalation-load-power-clock">
+                    <label>Konsumpcja</label>
+                </section>
+            </section>
+            <section id="today-summary">
+                <h3>Dziś podsumowanie</h3>
+                <section id="today-buy-value" class="small">
+                    <label>Zakupione</label>
+                </section>
+                <section id="today-sell-value" class="small">
+                    <label>Sprzedane</label>
+                </section>
+                <section id="today-production-value" class="small">
+                    <label>Wyprodukowane</label>
+                </section>
+                <section id="today-load-value" class="small">
+                    <label>Zkonsumowane</label>
+                </section>    
+                <section id="today-charge-value" class="small">
+                    <label>Naładowane</label>
+                </section>
+                <section id="today-discharge-value" class="small">
+                    <label>Rozładowane</label>
+                </section>                            
+            </section>
+
+            <section id="x" class="mid"></section>   
+        </section>
+        <section id="today-summary"></section>
                      
         <script type="text/javascript" src="script.js"></script>
     </body> 
