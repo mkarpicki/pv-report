@@ -13,7 +13,8 @@
     <body onload="new Monitor()">
         <h1>PV Monitor</h1>
         <section id="online">
-            <h2>Teraz</h2>
+            <hr class="uk-divider-icon uk-margin-xsmall-bottom"/>
+            <h3 class="uk-margin-xsmall-top">Status</h3>
             <section id="status">
                 <section id="now-status-ok" class="small"></section>
                 <span>Jeśli status nie jest zielony:&nbsp;</span><a href="#" onclick="UI.showAllStatuses(); return false;">Pokaż więcej</a>
@@ -25,7 +26,8 @@
                 </section>
             </section>
             <section id="now-overall">
-                <h3>Instalacja (teraz)</h3>
+                <hr class="uk-divider-icon uk-margin-xsmall-bottom"/>
+                <h3 class="uk-margin-xsmall-top">Instalacja (teraz)</h3>
                 <section id="now-instalation-production-power-clock" class="uk-inline mid">
                     <!-- <label>Produkcja</label> -->
                     <div class="uk-padding-small uk-position-center-left uk-overlay uk-overlay-default">
@@ -64,19 +66,24 @@
             </section>    
         </section>           
         <section id="today-summary">
-            <h3>Dziś podsumowanie</h3>
+            <hr class="uk-divider-icon uk-margin-xsmall-bottom"/>
+            <h3 class="uk-margin-xsmall-top">Podsumowanie dnia</h3>
+            <h4>Sieć</h4>
             <section id="today-buy-value" class="small">
                 <label>Zakupione</label>
             </section>
             <section id="today-sell-value" class="small">
                 <label>Sprzedane</label>
             </section>
+            <h4>Wyprodukowano</h4>
             <section id="today-production-value" class="panel-with-image solar small">
                 <!-- <label>Wyprodukowane</label> -->
             </section>
+            <h4>Skonsumowano</h4>
             <section id="today-load-value" class="panel-with-image load small">
-                <!-- <label>Zkonsumowane</label> -->
+                <!-- <label>skonsumowane</label> -->
             </section>    
+            <h4>Bateria</h4>
             <section id="today-charge-value" class="small">
                 <label>Naładowane</label>
             </section>
