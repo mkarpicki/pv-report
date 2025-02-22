@@ -2,11 +2,10 @@ body {
     padding: 0%;
     margin: 0%;
 }
-iframe {
-    border: 1px solid #cccccc;
+iframe {    
     width: 420px;
     height: 260px;  
-  
+/*  
     -ms-zoom: 0.5;
     -moz-transform: scale(0.5);
     -moz-transform-origin: 0px 0;
@@ -14,21 +13,28 @@ iframe {
     -o-transform-origin: 0 0;
     -webkit-transform: scale(0.5);
     -webkit-transform-origin: 0 0;  
-       
-}
-/*
-.scale75 iframe {
+*/
+  
     -ms-zoom: 0.75;
     -moz-transform: scale(0.75);
     -moz-transform-origin: 0px 0;
     -o-transform: scale(0.75);
     -o-transform-origin: 0 0;
     -webkit-transform: scale(0.75);
-    -webkit-transform-origin: 0 0;  
-} 
-*/
+    -webkit-transform-origin: 0 0; 
+        
+}
+
 iframe #displayValue {
     font-size: 20px;
+}
+
+section.mid {
+    height: 190px;
+}
+
+section.small {
+    height: 180px;
 }
 
 .mid iframe {
@@ -41,12 +47,26 @@ iframe #displayValue {
     height: 200px;       
 }
 
-h1 {
-    font-size: 18px;
+.panel-with-image {
+    border: 1px solid #cccccc;
+    background-repeat: no-repeat;
+    background-position-x: left;
+    background-position-y: center ;
+    padding-left: 50px;
 }
-h2 {
-    font-size: 16px;
+
+.solar {
+    background-image: url(https://img.icons8.com/office/40/solar-panel.png);
 }
-h2 {
-    font-size: 14px;
+
+.power-grid {
+    background-image: url(https://img.icons8.com/ios/50/transmission-tower.png);
+}
+
+.battery {
+    background-image: url(https://img.icons8.com/ios/50/car-battery.png);
+}
+
+.load {
+    background-image: url(https://img.icons8.com/office/50/home.png);
 }
