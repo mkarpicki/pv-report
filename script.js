@@ -5,9 +5,11 @@ let mapping = [
     { selector: "#now-status-stand-by", url: "https://thingspeak.com/channels/2814878/widgets/1026239?" },
     { selector: "#now-status-self-check", url: "https://thingspeak.com/channels/2814878/widgets/1026240?" },
 
+    // { selector: "#now-battery-power-value", url: "https://thingspeak.com/channels/2814869/widgets/1024031?" },
+    // { selector: "#now-battery-capacity-clock", url: "https://thingspeak.com/channels/2814869/widgets/1024032?" },
     { selector: "#now-battery-capacity-clock", url: "https://thingspeak.com/channels/2814869/widgets/1024029?" },
-    { selector: "#now-battery-temperature-value", url: "https://thingspeak.com/channels/2814869/widgets/1024031?" },
-    { selector: "#now-battery-power-value", url: "https://thingspeak.com/channels/2814869/widgets/1024032?" },
+   { selector: "#now-battery-temperature-value", url: "https://thingspeak.com/channels/2814869/widgets/1024031?" },
+   { selector: "#now-battery-power-value", url: "https://thingspeak.com/channels/2814869/widgets/1024032?" },
 
     { selector: "#now-instalation-production-power-clock", url: "https://thingspeak.com/channels/2814878/widgets/1024044?" },
     { selector: "#now-instalation-grid-power-clock", url: "https://thingspeak.com/channels/2814878/widgets/1024045?" },
