@@ -16,8 +16,8 @@ let mapping = [
     { selector: "#today-buy-value", url: "https://thingspeak.com/channels/2814877/widgets/1024023?" },
     { selector: "#today-sell-value", url: "https://thingspeak.com/channels/2814877/widgets/1024024?" },
     { selector: "#today-production-value", url: "https://thingspeak.com/channels/2814877/widgets/1024028?" },
-    { selector: "#today-load-value", url: "https://thingspeak.com/channels/2814877/widgets/1024025?" },
-    { selector: "#today-charge-value", url: "https://thingspeak.com/channels/2814877/widgets/1024026?" },
+    { selector: "#today-load-value", url: "https://thingspeak.com/channels/2814877/widgets/1024027?" },
+    { selector: "#today-charge-value", url: "https://thingspeak.com/channels/2814877/widgets/1024025?" },
     { selector: "#today-discharge-value", url: "https://thingspeak.com/channels/2814877/widgets/1024026?" }
 
 ];
