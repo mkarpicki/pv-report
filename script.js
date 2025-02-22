@@ -43,7 +43,7 @@ class Monitor {
     constructor() {
         mapping.forEach((panel) => {            
             let iFrame = this.getIframe(panel.url);
-            document.querySelector(panel.selector).appendChild(iFrame);
+            document.querySelector(panel.selector).prepend(iFrame);
         })
     }
 
