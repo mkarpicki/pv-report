@@ -46,9 +46,16 @@ class Monitor {
         mapping.forEach((panel) => {            
             let iFrame = this.getIframe(panel.url);
             document.querySelector(panel.selector).prepend(iFrame);
-        })
+        }) 
     }
 
 };
 
 //let monitor = new Monitor();
+
+class UI {
+
+    static showAllStatuses() {
+        document.querySelector("#rest-of-statuses-container").classList.toggle("hide");
+    }
+}

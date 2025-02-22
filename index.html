@@ -16,10 +16,13 @@
             <h2>Teraz</h2>
             <section id="status">
                 <section id="now-status-ok" class="small"></section>
-                <section id="now-status-alarm" class="small"></section>
-                <section id="now-status-fault" class="small"></section>
-                <section id="now-status-stand-by" class="small"></section>
-                <section id="now-status-self-check" class="small"></section>
+                <span>Jeśli status nie jest zielony:&nbsp;</span><a href="#" onclick="UI.showAllStatuses(); return false;">Pokaż więcej</a>
+                <section id="rest-of-statuses-container" class="hide">
+                    <section id="now-status-alarm" class="small"></section>
+                    <section id="now-status-fault" class="small"></section>
+                    <section id="now-status-stand-by" class="small"></section>
+                    <section id="now-status-self-check" class="small"></section>
+                </section>
             </section>
             <section id="now-overall">
                 <h3>Instalacja (teraz)</h3>
