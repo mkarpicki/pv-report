@@ -11,12 +11,12 @@ iframe {
     width: 420px;
     height: 260px;  
  
-    -ms-zoom: 0.68;
-    -moz-transform: scale(0.68);
+    -ms-zoom: 0.6;
+    -moz-transform: scale(0.6);
     -moz-transform-origin: 0px 0;
-    -o-transform: scale(0.68);
+    -o-transform: scale(0.6);
     -o-transform-origin: 0 0;
-    -webkit-transform: scale(0.68);
+    -webkit-transform: scale(0.6);
     -webkit-transform-origin: 0 0;  
 
 /*  
