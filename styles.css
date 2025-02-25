@@ -10,7 +10,7 @@ body {
 iframe {    
     width: 420px;
     height: 260px;  
-/*  
+ 
     -ms-zoom: 0.5;
     -moz-transform: scale(0.5);
     -moz-transform-origin: 0px 0;
@@ -18,8 +18,8 @@ iframe {
     -o-transform-origin: 0 0;
     -webkit-transform: scale(0.5);
     -webkit-transform-origin: 0 0;  
-*/
-  
+
+/*  
     -ms-zoom: 0.75;
     -moz-transform: scale(0.75);
     -moz-transform-origin: 0px 0;
@@ -27,7 +27,7 @@ iframe {
     -o-transform-origin: 0 0;
     -webkit-transform: scale(0.75);
     -webkit-transform-origin: 0 0; 
-        
+*/        
 }
 
 iframe #displayValue {
