@@ -55,6 +55,9 @@ class Monitor {
             }         
         })
         
+    }
+
+    static prepareDates() {
         today = new Date();
 
         let day = today.getDate();
@@ -69,11 +72,12 @@ class Monitor {
         let endtDateElement = document.querySelector('#end-date');
 
         if (startDateElement && endtDateElement) {
-
-            console.log(today);
-
             startDateElement.setAttribute("max", today);
             endtDateElement.setAttribute("max", today);
+
+            //TODO only if no url
+            //startDateElement.setAttribute("value", today);
+            //endtDateElement.setAttribute("value", today);
         }
     }
 
