@@ -24,17 +24,21 @@ let mapping = [
 
 ];
 
+let startDate;
+let endDate;
+let today;
+
 //ajax.json
 //https://thingspeak.mathworks.com/channels/2814878/field/4/last.json
 
 class Monitor {
 
-    getUrl (url) {  
+    static getUrl (url) {  
         let timestamp = new Date().getTime();
         return url + `ts=${timestamp}`;
     }
 
-    getIframe (url) {
+    static getIframe (url) {
         let src = this.getUrl(url);
         let iFrameElement = document.createElement('iframe');
         iFrameElement.src = src;
@@ -42,20 +46,53 @@ class Monitor {
         return iFrameElement;
     }
 
-    constructor() {
-        mapping.forEach((panel) => {            
-            let iFrame = this.getIframe(panel.url);
-            document.querySelector(panel.selector).prepend(iFrame);            
-        }) 
+    static init() {
+        mapping.forEach((panel) => {    
+            let element = document.querySelector(panel.selector);  
+            if (element) {      
+                let iFrame = this.getIframe(panel.url);
+                element.prepend(iFrame);   
+            }         
+        })
+        
+        today = new Date();
+
+        let day = today.getDate();
+        day = (day < 10 )? '0' + day : day;
+
+        let month = (today.getMonth() + 1);
+        month = (month < 10)? '0' + month : month;
+
+        today = today.getFullYear() + '-' + month + '-' + day;
+
+        let startDateElement = document.querySelector('#start-date');
+        let endtDateElement = document.querySelector('#end-date');
+
+        if (startDateElement && endtDateElement) {
+
+            console.log(today);
+
+            startDateElement.setAttribute("max", today);
+            endtDateElement.setAttribute("max", today);
+        }
+    }
+
+    static showAllStatuses() {
+        document.querySelector("#rest-of-statuses-container").classList.toggle("hide");
+    }
+
+    static setStart(value) {
+        console.log("start " + value);
+    }
+
+    static setEnd(value) {
+        console.log("end " + value);
+    }
+
+    static refresCharts() {
+
     }
 
 };
 
 //let monitor = new Monitor();
-
-class UI {
-
-    static showAllStatuses() {
-        document.querySelector("#rest-of-statuses-container").classList.toggle("hide");
-    }
-}

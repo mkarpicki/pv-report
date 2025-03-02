@@ -10,14 +10,14 @@
         <!-- UIkit CSS -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.23.1/dist/css/uikit.min.css" />
     </head>   
-    <body onload="new Monitor()">
+    <body onload="Monitor.init()">
         <h1>PV Monitor</h1>
         <section id="online">
             <hr class="uk-divider-icon uk-margin-xsmall-bottom"/>
             <h3 class="uk-margin-xsmall-top">Status</h3>
             <section id="status">
                 <section id="now-status-ok" class="small"></section>
-                <span>Jeśli status nie jest zielony:&nbsp;</span><a href="#" onclick="UI.showAllStatuses(); return false;">Pokaż więcej</a>
+                <span>Jeśli status nie jest zielony:&nbsp;</span><a href="#" onclick="Monitor.showAllStatuses(); return false;">Pokaż więcej</a>
                 <section id="rest-of-statuses-container" class="hide">
                     <section id="now-status-alarm" class="small"></section>
                     <section id="now-status-fault" class="small"></section>

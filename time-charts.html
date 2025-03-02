@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" prefix="og: https://ogp.me/ns#">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta charset="utf-8">
+        <meta name="MobileOptimized" content="width" />
+        <meta name="HandheldFriendly" content="true" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes" />
+        <link rel="stylesheet" href="styles.css">
+        <!-- UIkit CSS -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.23.1/dist/css/uikit.min.css" />
+    </head>   
+    <body onload="Monitor.init()">
+
+        <label for="start">Od:</label>
+        <input
+            type="date"
+            id="start-date"
+            name="chart-start"
+            value="2025-01-01"
+            min="2024-11-01"
+            max="2030-12-31" 
+            onchange="Monitor.setStart(this.value); return false;"/>
+
+        <label for="start">Do:</label>
+
+        <input
+            type="date"
+            id="end-date"
+            name="chart-end"
+            value="2025-02-01"
+            min="2024-11-01"
+            max="2030-12-31" 
+            onchange="Monitor.setEnd(this.value); return false;"/>        
+        
+        
+        <!-- UIkit JS -->
+        <script src="https://cdn.jsdelivr.net/npm/uikit@3.23.1/dist/js/uikit.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/uikit@3.23.1/dist/js/uikit-icons.min.js"></script>             
+        <script type="text/javascript" src="script.js"></script>
+    </body> 
+</html>
