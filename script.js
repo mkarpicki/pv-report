@@ -20,7 +20,9 @@ let mapping = [
     { selector: "#today-production-value", url: "https://thingspeak.com/channels/2814877/widgets/1024028?" },
     { selector: "#today-load-value", url: "https://thingspeak.com/channels/2814877/widgets/1024027?" },
     { selector: "#today-charge-value", url: "https://thingspeak.com/channels/2814877/widgets/1024025?" },
-    { selector: "#today-discharge-value", url: "https://thingspeak.com/channels/2814877/widgets/1024026?" }
+    { selector: "#today-discharge-value", url: "https://thingspeak.com/channels/2814877/widgets/1024026?" },
+
+    { selector: "#day-production-chart", url: "https://thingspeak.mathworks.com/channels/2814878/charts/1?bgcolor=%23ffffff&color=%23d62020&type=column&start=${startDate}%2000:00:00&end=${endDate}%2023:59:59&" }
 
 ];
 
@@ -34,6 +36,11 @@ let today;
 class Monitor {
 
     static getUrl (url) {  
+
+        let startDate = this.getStartDate();
+        let endDate = this.getEndDate();    
+        url = eval('`' + url + '`');
+
         let timestamp = new Date().getTime();
         return url + `ts=${timestamp}`;
     }
@@ -49,8 +56,9 @@ class Monitor {
     static init() {
         mapping.forEach((panel) => {    
             let element = document.querySelector(panel.selector);  
-            if (element) {      
+            if (element) {   
                 let iFrame = this.getIframe(panel.url);
+                //element.innerHTML = '';
                 element.prepend(iFrame);   
             }         
         })
@@ -68,33 +76,60 @@ class Monitor {
 
         today = today.getFullYear() + '-' + month + '-' + day;
 
-        let startDateElement = document.querySelector('#start-date');
-        let endtDateElement = document.querySelector('#end-date');
+        let startDateElement = document.querySelector('#start-date-picker');
+        let endtDateElement = document.querySelector('#end-date-picker');
+        let dayDateElement = document.querySelector('#day-picker');
 
-        if (startDateElement && endtDateElement) {
+        if (startDateElement) {
             startDateElement.setAttribute("max", today);
-            endtDateElement.setAttribute("max", today);
 
             //TODO only if no url
             //startDateElement.setAttribute("value", today);
+        }
+        if (endtDateElement) {
+            endtDateElement.setAttribute("max", today);
+
+            //TODO only if no url
             //endtDateElement.setAttribute("value", today);
         }
+        
+        if (dayDateElement) {
+            dayDateElement.setAttribute("max", today);
+            dayDateElement.setAttribute("value", today);
+            this.setDay(today);
+        }     
     }
 
     static showAllStatuses() {
         document.querySelector("#rest-of-statuses-container").classList.toggle("hide");
     }
 
+    static setDay(value) {
+        this.setStart(value);
+        this.setEnd(value);
+        this.refresCharts();
+    }
+
     static setStart(value) {
-        console.log("start " + value);
+        //console.log("start " + value);
+        startDate = value;
     }
 
     static setEnd(value) {
-        console.log("end " + value);
+        //console.log("end " + value);
+        endDate = value;
+    }
+
+    static getStartDate() {
+        return startDate;
+    }
+
+    static getEndDate() {
+        return endDate;
     }
 
     static refresCharts() {
-
+        this.init();
     }
 
 };

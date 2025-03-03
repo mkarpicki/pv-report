@@ -8,7 +8,7 @@ body {
 }
 
 iframe {    
-    width: 420px;
+    width: 450px;
     height: 260px;  
 /* 
     -ms-zoom: 0.7;
@@ -34,11 +34,11 @@ iframe #displayValue {
     font-size: 20px;
 }
 
-section.mid {
+.mid {
     height: 190px;
 }
 
-section.small {
+.small {
     height: 180px;
 }
 

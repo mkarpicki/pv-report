@@ -10,28 +10,39 @@
         <!-- UIkit CSS -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.23.1/dist/css/uikit.min.css" />
     </head>   
-    <body onload="Monitor.init(); Monitor.prepareDates();">
+    <body onload="Monitor.prepareDates(); Monitor.init();">
 
-        <label for="start">Od:</label>
+        <label for="day">Dzień:</label>
         <input
             type="date"
-            id="start-date"
-            name="chart-start"
+            id="day-picker"
+            name="day-picker"
+            value="2025-01-01"
+            min="2024-11-01"
+            max="2030-12-31" 
+            onchange="Monitor.setDay(this.value); return false;"/>
+
+        <!-- <label for="start-date-picker">Od:</label>
+        <input
+            type="date"
+            id="start-date-picker"
+            name="start-date-picker"
             value="2025-01-01"
             min="2024-11-01"
             max="2030-12-31" 
             onchange="Monitor.setStart(this.value); return false;"/>
 
-        <label for="start">Do:</label>
-
+        <label for="end-date-picker">Do:</label>
         <input
             type="date"
-            id="end-date"
-            name="chart-end"
+            id="end-date-picker"
+            name="end-date-picker"
             value="2025-02-01"
             min="2024-11-01"
             max="2030-12-31" 
-            onchange="Monitor.setEnd(this.value); return false;"/>        
+            onchange="Monitor.setEnd(this.value); return false;"/>      -->
+            
+        <section id="day-production-chart"></section>    
         
         
         <!-- UIkit JS -->
