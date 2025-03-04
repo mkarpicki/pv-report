@@ -11,7 +11,7 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.23.1/dist/css/uikit.min.css" />
     </head>   
     <body onload="Monitor.init()">
-        <h1>PV Monitor</h1>
+        <!-- <h1>PV Monitor</h1> -->
         <section id="online">
             <hr class="uk-divider-icon uk-margin-xsmall-bottom"/>
             <h3 class="uk-margin-xsmall-top">Status</h3>
@@ -28,45 +28,46 @@
             <section id="now-overall">
                 <hr class="uk-divider-icon uk-margin-xsmall-bottom"/>
                 <h3 class="uk-margin-xsmall-top">Instalacja (teraz)</h3>
-                <section class="uk-inline mid">
-                    <!-- <label>Produkcja</label> -->
-                    <div id="now-instalation-production-power-clock"></div>
+                <section class="uk-inline">
+                    <h6 class="uk-text-center">Produkcja</h6>
+                    <div id="now-instalation-production-power-clock" class="mid"></div>
                     <div class="uk-padding-small uk-position-center-left uk-overlay uk-overlay-default">
                         <div class="ico ico-solar"></div>
                     </div>
                     
                 </section>
-                <section class="uk-inline mid">
-                    <!-- <label>Sieć</label> -->
-                    <div id="now-instalation-grid-power-clock"></div>
+                <section class="uk-inline">
+                    <h6 class="uk-text-center">Sieć</h6>
+                    <div id="now-instalation-grid-power-clock" class="mid"></div>
                     <div class="uk-padding-small uk-position-center-left uk-overlay uk-overlay-default">
                         <div class="ico ico-power-grid"></div>
                     </div>                     
                 </section>
-                <section class="uk-inline mid">
-                    <!-- <label>Konsumpcja</label> -->
-                    <div id="now-instalation-load-power-clock"></div>
+                <section class="uk-inline">
+                    <h6 class="uk-text-center">Konsumpcja</h6>
+                    <div id="now-instalation-load-power-clock" class="mid"></div>
                     <div class="uk-padding-small uk-position-center-left uk-overlay uk-overlay-default">
                         <div class="ico ico-load"></div>
                     </div>                     
                 </section>
                 <section id="battery">
+                    <hr class="uk-divider-icon uk-margin-xsmall-bottom"/>
                     <h4>Bateria (teraz)</h4>
                 
-                    <section class="uk-inline mid">
-                        <!-- <label>Poziom</label> -->
-                        <div id="now-battery-capacity-clock"></div>
+                    <section class="uk-inline">
+                        <h6 class="uk-text-center">Poziom</h6>
+                        <div id="now-battery-capacity-clock" class="mid"></div>
                         <div class="uk-padding-small uk-position-center-left uk-overlay uk-overlay-default">
                             <div class="ico ico-battery"></div>
                         </div>
                     </section>
-                    <section class="uk-inline small">
-                        <!-- <section>Użycie</section> -->
-                        <div id="now-battery-power-value"></div> 
+                    <section class="uk-inline">
+                        <h6 class="uk-text-center">Użycie</h6>
+                        <div id="now-battery-power-value" class="small"></div> 
                     </section>                
-                    <section class="uk-inline small">
-                        <!-- <section>Temperatura</section> -->
-                        <div id="now-battery-temperature-value"></div>
+                    <section class="uk-inline">
+                        <h6 class="uk-text-center">Temperatura</h6>
+                        <div id="now-battery-temperature-value" class="small"></div>
                     </section>
                 </section> 
             </section>    
@@ -75,32 +76,32 @@
             <hr class="uk-divider-icon uk-margin-xsmall-bottom"/>
             <h3 class="uk-margin-xsmall-top">Podsumowanie dnia</h3>
             <h4>Sieć</h4>
-            <section class="small">
-                <label>Zakupione</label>
-                <div id="today-buy-value"></div>
+            <section>
+                <h6 class="uk-text-center">Zakupione</h6>
+                <div id="today-buy-value" class="small"></div>
             </section>
-            <section class="small">
-                <label>Sprzedane</label>
-                <div id="today-sell-value"></div>
+            <section>
+                <h6 class="uk-text-center">Sprzedane</h6>
+                <div id="today-sell-value" class="small"></div>
             </section>
             <h4>Wyprodukowano</h4>
-            <section class="panel-with-image solar small">
+            <section class="panel-with-image solar">
                 <!-- <label>Wyprodukowane</label> -->
-                <div id="today-production-value"></div>
+                <div id="today-production-value" class="small"></div>
             </section>
             <h4>Skonsumowano</h4>
-            <section class="panel-with-image load small">
+            <section class="panel-with-image load">
                 <!-- <label>skonsumowane</label> -->
-                <div id="today-load-value"></div>
+                <div id="today-load-value" class="small"></div>
             </section>    
             <h4>Bateria</h4>
-            <section class="small">
-                <label>Naładowane</label>
-                <div id="today-charge-value"></div>
+            <section>
+                <h6 class="uk-text-center">Naładowane</h6>
+                <div id="today-charge-value" class="small"></div>
             </section>
-            <section class="small">
-                <label>Rozładowane</label>
-                <div id="today-discharge-value"></div>
+            <section>
+                <h6 class="uk-text-center">Rozładowane</h6>
+                <div id="today-discharge-value" class="small"></div>
             </section>                            
         </section>
         
