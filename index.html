@@ -19,30 +19,33 @@
                 <section id="now-status-ok" class="small"></section>
                 <span>Jeśli status nie jest zielony:&nbsp;</span><a href="#" onclick="Monitor.showAllStatuses(); return false;">Pokaż więcej</a>
                 <section id="rest-of-statuses-container" class="hide">
-                    <section id="now-status-alarm" class="small"></section>
-                    <section id="now-status-fault" class="small"></section>
-                    <section id="now-status-stand-by" class="small"></section>
-                    <section id="now-status-self-check" class="small"></section>
+                    <div id="now-status-alarm" class="small"></div>
+                    <div id="now-status-fault" class="small"></div>
+                    <div id="now-status-stand-by" class="small"></div>
+                    <div id="now-status-self-check" class="small"></div>
                 </section>
             </section>
             <section id="now-overall">
                 <hr class="uk-divider-icon uk-margin-xsmall-bottom"/>
                 <h3 class="uk-margin-xsmall-top">Instalacja (teraz)</h3>
-                <section id="now-instalation-production-power-clock" class="uk-inline mid">
+                <section class="uk-inline mid">
                     <!-- <label>Produkcja</label> -->
+                    <div id="now-instalation-production-power-clock"></div>
                     <div class="uk-padding-small uk-position-center-left uk-overlay uk-overlay-default">
                         <div class="ico ico-solar"></div>
                     </div>
                     
                 </section>
-                <section id="now-instalation-grid-power-clock" class="uk-inline mid">
+                <section class="uk-inline mid">
                     <!-- <label>Sieć</label> -->
+                    <div id="now-instalation-grid-power-clock"></div>
                     <div class="uk-padding-small uk-position-center-left uk-overlay uk-overlay-default">
                         <div class="ico ico-power-grid"></div>
                     </div>                     
                 </section>
-                <section id="now-instalation-load-power-clock" class="uk-inline mid">
+                <section class="uk-inline mid">
                     <!-- <label>Konsumpcja</label> -->
+                    <div id="now-instalation-load-power-clock"></div>
                     <div class="uk-padding-small uk-position-center-left uk-overlay uk-overlay-default">
                         <div class="ico ico-load"></div>
                     </div>                     
@@ -50,17 +53,20 @@
                 <section id="battery">
                     <h4>Bateria (teraz)</h4>
                 
-                    <section id="now-battery-capacity-clock" class="uk-inline mid">
+                    <section class="uk-inline mid">
                         <!-- <label>Poziom</label> -->
+                        <div id="now-battery-capacity-clock"></div>
                         <div class="uk-padding-small uk-position-center-left uk-overlay uk-overlay-default">
                             <div class="ico ico-battery"></div>
                         </div>
                     </section>
-                    <section id="now-battery-power-value" class="uk-inline small">
+                    <section class="uk-inline small">
                         <!-- <section>Użycie</section> -->
+                        <div id="now-battery-power-value"></div> 
                     </section>                
-                    <section id="now-battery-temperature-value" class="uk-inline small">
+                    <section class="uk-inline small">
                         <!-- <section>Temperatura</section> -->
+                        <div id="now-battery-temperature-value"></div>
                     </section>
                 </section> 
             </section>    
@@ -69,26 +75,32 @@
             <hr class="uk-divider-icon uk-margin-xsmall-bottom"/>
             <h3 class="uk-margin-xsmall-top">Podsumowanie dnia</h3>
             <h4>Sieć</h4>
-            <section id="today-buy-value" class="small">
+            <section class="small">
                 <label>Zakupione</label>
+                <div id="today-buy-value"></div>
             </section>
-            <section id="today-sell-value" class="small">
+            <section class="small">
                 <label>Sprzedane</label>
+                <div id="today-sell-value"></div>
             </section>
             <h4>Wyprodukowano</h4>
-            <section id="today-production-value" class="panel-with-image solar small">
+            <section class="panel-with-image solar small">
                 <!-- <label>Wyprodukowane</label> -->
+                <div id="today-production-value"></div>
             </section>
             <h4>Skonsumowano</h4>
-            <section id="today-load-value" class="panel-with-image load small">
+            <section class="panel-with-image load small">
                 <!-- <label>skonsumowane</label> -->
+                <div id="today-load-value"></div>
             </section>    
             <h4>Bateria</h4>
-            <section id="today-charge-value" class="small">
+            <section class="small">
                 <label>Naładowane</label>
+                <div id="today-charge-value"></div>
             </section>
-            <section id="today-discharge-value" class="small">
+            <section class="small">
                 <label>Rozładowane</label>
+                <div id="today-discharge-value"></div>
             </section>                            
         </section>
         

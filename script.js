@@ -58,7 +58,7 @@ class Monitor {
             let element = document.querySelector(panel.selector);  
             if (element) {   
                 let iFrame = this.getIframe(panel.url);
-                //element.innerHTML = '';
+                element.innerHTML = '';
                 element.prepend(iFrame);   
             }         
         })
