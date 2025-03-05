@@ -13,19 +13,21 @@
     <body onload="Monitor.init()">
         <!-- <h1>PV Monitor</h1> -->
         <section id="online" class="uk-margin-small-left">
-            <section id="status" class="uk-margin-small-top uk-inline uk-card uk-card-small uk-card-default">
-                <h3 class="uk-margin-xsmall-top">Status</h3>
-                <section id="now-status-ok" class="small"></section>
-                <span>Jeśli status nie jest zielony:&nbsp;</span><a href="#" onclick="Monitor.showAllStatuses(); return false;">Pokaż więcej</a>
-                <section id="rest-of-statuses-container" class="hide">
-                    <div id="now-status-alarm" class="small"></div>
-                    <div id="now-status-fault" class="small"></div>
-                    <div id="now-status-stand-by" class="small"></div>
-                    <div id="now-status-self-check" class="small"></div>
+            <section id="status">
+                <h3 class="uk-margin-medium-top">Status</h3>
+                <section class="uk-margin-small-top uk-inline uk-card uk-card-small uk-card-default">
+                    <section id="now-status-ok" class="small"></section>
+                    <span>Jeśli status nie jest zielony:&nbsp;</span><a href="#" onclick="Monitor.showAllStatuses(); return false;">Pokaż więcej</a>
+                    <section id="rest-of-statuses-container" class="hide">
+                        <div id="now-status-alarm" class="small"></div>
+                        <div id="now-status-fault" class="small"></div>
+                        <div id="now-status-stand-by" class="small"></div>
+                        <div id="now-status-self-check" class="small"></div>
+                    </section>
                 </section>
             </section>
             <section id="now-overall">
-                <h3 class="uk-margin-xsmall-top">Instalacja (teraz)</h3>
+                <h3 class="uk-margin-medium-top">Instalacja (teraz)</h3>
                 <section class="uk-margin-small-top uk-inline uk-card uk-card-small uk-card-default">
                     <h6 class="uk-text-center">Produkcja</h6>
                     <div id="now-instalation-production-power-clock" class="mid"></div>
@@ -42,7 +44,7 @@
                     <div class="ico ico-load uk-padding-small uk-position-center-left uk-overlay "></div>                     
                 </section>
                 <section id="battery">
-                    <h4>Bateria (teraz)</h4>
+                    <h4 class="uk-margin-medium-top">Bateria (teraz)</h4>
                     <section class="uk-margin-small-top  uk-inline uk-card uk-card-small uk-card-default">
                         <h6 class="uk-text-center">Poziom</h6>
                         <div id="now-battery-capacity-clock" class="mid"></div>
@@ -60,7 +62,7 @@
             </section>    
         </section>           
         <section id="today-summary" class="uk-margin-small-left">
-            <h3 class="uk-margin-xsmall-top">Podsumowanie dnia</h3>
+            <h3 class="uk-margin-medium-top">Podsumowanie dnia</h3>
             <h4>Sieć</h4>
             <section class="uk-margin-small-top  uk-inline uk-card uk-card-small uk-card-default">
                 <h6 class="uk-text-center">Zakupione</h6>
