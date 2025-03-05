@@ -68,18 +68,18 @@ iframe #displayValue {
     background-position-y: center ;    
 }
 
-.solar, .ico-solar {
+.ico-solar {
     background-image: url(https://img.icons8.com/office/40/solar-panel.png);
 }
 
-.power-grid, .ico-power-grid {
+.ico-power-grid {
     background-image: url(https://img.icons8.com/ios/50/transmission-tower.png);
 }
 
-.battery, .ico-battery {
+.ico-battery {
     background-image: url(https://img.icons8.com/ios/50/car-battery.png);
 }
 
-.load, .ico-load {
+.ico-load {
     background-image: url(https://img.icons8.com/office/50/home.png);
 }
