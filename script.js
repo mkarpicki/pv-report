@@ -22,8 +22,14 @@ let mapping = [
     { selector: "#today-charge-value", url: "https://thingspeak.com/channels/2814877/widgets/1024025?" },
     { selector: "#today-discharge-value", url: "https://thingspeak.com/channels/2814877/widgets/1024026?" },
 
-    { selector: "#day-production-chart", url: "https://thingspeak.mathworks.com/channels/2814878/charts/1?bgcolor=%23ffffff&color=%23d62020&type=column&start=${startDate}%2000:00:00&end=${endDate}%2023:59:59&" }
-
+    { selector: "#day-production-chart", url: "https://thingspeak.mathworks.com/channels/2814878/charts/1?bgcolor=%23ffffff&color=%23d62020&type=${type}&start=${startDate}%2000:00:00&end=${endDate}%2023:59:59&" },
+    { selector: "#day-grid-sell-chart", url: "https://thingspeak.mathworks.com/channels/2814878/charts/2?bgcolor=%23ffffff&color=%23d62020&type=${type}&start=${startDate}%2000:00:00&end=${endDate}%2023:59:59&" },
+    { selector: "#day-grid-buy-chart", url: "https://thingspeak.mathworks.com/channels/2814878/charts/3?bgcolor=%23ffffff&color=%23d62020&type=${type}&start=${startDate}%2000:00:00&end=${endDate}%2023:59:59&" },
+    { selector: "#day-load-chart", url: "https://thingspeak.mathworks.com/channels/2814878/charts/6?bgcolor=%23ffffff&color=%23d62020&type=${type}&start=${startDate}%2000:00:00&end=${endDate}%2023:59:59&" },
+    { selector: "#day-battery-capacity-chart", url: "https://thingspeak.mathworks.com/channels/2814869/charts/1?bgcolor=%23ffffff&color=%23d62020&type=${type}&start=${startDate}%2000:00:00&end=${endDate}%2023:59:59&" },
+    { selector: "#day-battery-usage-chart", url: "https://thingspeak.mathworks.com/channels/2814869/charts/3?bgcolor=%23ffffff&color=%23d62020&type=${type}&start=${startDate}%2000:00:00&end=${endDate}%2023:59:59&" },
+    { selector: "#day-battery-temp-chart", url: "https://thingspeak.mathworks.com/channels/2814869/charts/2?bgcolor=%23ffffff&color=%23d62020&type=${type}&start=${startDate}%2000:00:00&end=${endDate}%2023:59:59&" }
+    
 ];
 
 let startDate;
@@ -38,7 +44,8 @@ class Monitor {
     static getUrl (url) {  
 
         let startDate = this.getStartDate();
-        let endDate = this.getEndDate();    
+        let endDate = this.getEndDate();   
+        let type = 'column'; // 'line'; 
         url = eval('`' + url + '`');
 
         let timestamp = new Date().getTime();
