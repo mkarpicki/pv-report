@@ -13,6 +13,10 @@
     </head>   
     <body onload="Monitor.prepareDates(); Monitor.init();" class="uk-background-muted uk-height-large">
         <div id="floating-buttons" uk-sticky="position: bottom" class="uk-position-bottom-right" uk-scroll="">
+            <a href="#" onclick="Monitor.home(); return false;" class="uk-button uk-button-default">
+                <span uk-icon="icon: home"></span>
+            </a>  
+            &nbsp;              
             <a href="#" onclick="Monitor.refresh(); return false;" class="uk-button uk-button-default">
                 <span uk-icon="icon: refresh"></span>
             </a>  

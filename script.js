@@ -117,7 +117,7 @@ class Monitor {
         if (date) {
             var url = new URL(window.location.href);
             url.searchParams.set('date', date);
-            window.location.replace(url.toString());
+            window.location = (url.toString());
         }
     }
 
@@ -145,6 +145,10 @@ class Monitor {
 
     static refresh() {
         window.location.reload();
+    }
+
+    static home() {
+        window.location = "index.html";
     }
 
 };
