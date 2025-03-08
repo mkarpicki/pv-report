@@ -36,9 +36,6 @@ let startDate;
 let endDate;
 let today;
 
-//ajax.json
-//https://thingspeak.mathworks.com/channels/2814878/field/4/last.json
-
 class Monitor {
 
     static getUrl (url) {  
@@ -72,6 +69,12 @@ class Monitor {
         
     }
 
+    static readDateFromUrl() {
+        const paramsString = window.location.search;
+        const searchParams = new URLSearchParams(paramsString);
+        return searchParams.get("date");
+    }
+
     static prepareDates() {
         today = new Date();
 
@@ -83,27 +86,20 @@ class Monitor {
 
         today = today.getFullYear() + '-' + month + '-' + day;
 
-        let startDateElement = document.querySelector('#start-date-picker');
-        let endtDateElement = document.querySelector('#end-date-picker');
         let dayDateElement = document.querySelector('#day-picker');
-
-        if (startDateElement) {
-            startDateElement.setAttribute("max", today);
-
-            //TODO only if no url
-            //startDateElement.setAttribute("value", today);
-        }
-        if (endtDateElement) {
-            endtDateElement.setAttribute("max", today);
-
-            //TODO only if no url
-            //endtDateElement.setAttribute("value", today);
-        }
         
         if (dayDateElement) {
             dayDateElement.setAttribute("max", today);
-            dayDateElement.setAttribute("value", today);
-            this.setDay(today);
+            
+            let date = this.readDateFromUrl();
+            if (date) {
+                dayDateElement.setAttribute("value", date);
+                this.setDay(date);
+            } else {
+                dayDateElement.setAttribute("value", today);
+                this.setDay(today);
+            }
+            
         }     
     }
 
@@ -115,6 +111,14 @@ class Monitor {
         this.setStart(value);
         this.setEnd(value);
         this.refresCharts();
+    }
+
+    static redirectToDate(date) {
+        if (date) {
+            var url = new URL(window.location.href);
+            url.searchParams.set('date', date);
+            window.location.replace(url.toString());
+        }
     }
 
     static setStart(value) {
@@ -145,4 +149,3 @@ class Monitor {
 
 };
 
-//let monitor = new Monitor();
