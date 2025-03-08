@@ -139,6 +139,10 @@ class Monitor {
         this.init();
     }
 
+    static refresh() {
+        window.location.reload();
+    }
+
 };
 
 //let monitor = new Monitor();

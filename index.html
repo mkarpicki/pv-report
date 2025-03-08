@@ -9,15 +9,26 @@
         <link rel="stylesheet" href="styles.css">
         <!-- UIkit CSS -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.23.1/dist/css/uikit.min.css" />
+        <title>PV Monitor</title>
     </head>   
-    <body onload="Monitor.init()">
+    <body onload="Monitor.init()" class="uk-background-muted">
+
+        <div id="floating-buttons" uk-sticky="position: bottom" class="uk-position-bottom-right" uk-scroll="">
+            <a href="#" onclick="Monitor.refresh(); return false;" class="uk-button uk-button-default">
+                <span uk-icon="icon: refresh"></span>
+            </a>        
+            <a id="target" href="#" class="uk-button uk-button-default" >
+                <span uk-icon="icon: arrow-up"></span>
+            </a>
+        </div>
+        
         <!-- <h1>PV Monitor</h1> -->
         <section id="online" class="uk-margin-small-left">
             <section id="status">
                 <!-- <h3 class="uk-margin-medium-top">Status</h3> -->
                 <section class="uk-margin-small-top uk-inline uk-card uk-card-small uk-card-default">
                     <section id="now-status-ok" class="small"></section>
-                    <span>Jeśli status nie jest zielony:&nbsp;</span><a href="#" onclick="Monitor.showAllStatuses(); return false;">Pokaż więcej</a>
+                    <span>Status nie jest zielony?&nbsp;</span><a href="#" onclick="Monitor.showAllStatuses(); return false;">Pokaż więcej</a>
                     <section id="rest-of-statuses-container" class="hide">
                         <div id="now-status-alarm" class="small"></div>
                         <div id="now-status-fault" class="small"></div>
@@ -100,7 +111,8 @@
         
         <!-- UIkit JS -->
         <script src="https://cdn.jsdelivr.net/npm/uikit@3.23.1/dist/js/uikit.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/uikit@3.23.1/dist/js/uikit-icons.min.js"></script>             
+        <script src="https://cdn.jsdelivr.net/npm/uikit@3.23.1/dist/js/uikit-icons.min.js"></script>   
+
         <script type="text/javascript" src="script.js"></script>
     </body> 
 </html>

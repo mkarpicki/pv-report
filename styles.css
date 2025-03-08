@@ -87,3 +87,16 @@ iframe #displayValue {
 .ico-load {
     background-image: url(https://img.icons8.com/office/50/home.png);
 }
+
+#floating-buttons a {
+    display: block;
+}
+
+/* **** hack UI kit */
+.uk-sticky-placeholder {
+    display: none;
+}
+
+.uk-icon svg {
+    max-width: 20px;
+}

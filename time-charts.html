@@ -9,9 +9,18 @@
         <link rel="stylesheet" href="styles.css">
         <!-- UIkit CSS -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.23.1/dist/css/uikit.min.css" />
+        <title>PV Monitor</title>
     </head>   
-    <body onload="Monitor.prepareDates(); Monitor.init();">
-
+    <body onload="Monitor.prepareDates(); Monitor.init();" class="uk-background-muted uk-height-large">
+        <div id="floating-buttons" uk-sticky="position: bottom" class="uk-position-bottom-right" uk-scroll="">
+            <a href="#" onclick="Monitor.refresh(); return false;" class="uk-button uk-button-default">
+                <span uk-icon="icon: refresh"></span>
+            </a>        
+            <a id="target" href="#" class="uk-button uk-button-default" >
+                <span uk-icon="icon: arrow-up"></span>
+            </a>
+        </div>
+        
         <label for="day">Dzień:</label>
         <input
             type="date"
@@ -71,8 +80,7 @@
                 <section id="day-battery-temp-chart"></section>  
             </section>            
         </section>              
-        
-        
+
         <!-- UIkit JS -->
         <script src="https://cdn.jsdelivr.net/npm/uikit@3.23.1/dist/js/uikit.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/uikit@3.23.1/dist/js/uikit-icons.min.js"></script>             
